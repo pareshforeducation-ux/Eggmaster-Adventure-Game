@@ -1,0 +1,62 @@
+/* General page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #d0f0c0, #e0ffe0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main container */
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+
+/* Subheading / description */
+h2 {
+    color: #333333;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+/* Adventure log paragraphs */
+p {
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+/* Highlighted stats */
+.final-stats {
+    color: #e76f51;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Footer / credits */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Make footer visually part of the card */
+.container footer {
+    margin-top: 25px;
+}
