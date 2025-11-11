@@ -1,0 +1,7 @@
+💀 Alas, Mr. Eggmaster! Your journey ends here.  
+
+The jungle’s dangers proved too much this time. Consider your choices carefully next time.  
+
+Final HP: {HP}  
+Inventory: {inventory}  
+

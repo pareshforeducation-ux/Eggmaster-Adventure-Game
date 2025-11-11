@@ -1,0 +1,5 @@
+Ahead, you notice a cluster of rare herbs and a shiny object on the ground. Hidden traps might be around. 
+
+1. Pick the herbs to restore health
+2. Follow the narrow safe path
+3. Inspect the shiny object

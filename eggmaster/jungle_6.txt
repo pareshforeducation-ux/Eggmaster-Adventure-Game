@@ -1,0 +1,5 @@
+You find an ancient temple partially hidden by vines. The temple may contain treasures but also traps. You can either go inside carefully or continue along the jungle path.
+
+1. Enter the temple carefully
+2. Avoid the temple and proceed
+3. Investigate suspicious areas around the temple

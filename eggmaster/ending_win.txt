@@ -1,0 +1,6 @@
+🎉 Congratulations, Mr. Eggmaster! You survived the Amazon jungle.  
+
+Throughout your adventure, you overcame numerous challenges, made careful decisions, and used your items wisely.  
+
+Final HP: {HP}  
+Inventory: {inventory}  

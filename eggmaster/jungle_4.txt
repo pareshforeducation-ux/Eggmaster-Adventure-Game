@@ -1,0 +1,6 @@
+You reach a ravine. A thick vine hangs from above and a path winds around the ravine. Risky leaps might yield faster progress.
+
+1. Swing across the ravine using the vine
+2. Walk carefully around the ravine
+3. Attempt a risky jump across the ravine
+

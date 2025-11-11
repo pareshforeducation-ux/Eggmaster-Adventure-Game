@@ -1,0 +1,5 @@
+You arrive at the edge of the Amazon jungle. The canopy is thick, the sounds mysterious, and a troop of monkeys chatters ahead. You see three possible paths:
+
+1. Follow the monkeys into the foliage
+2. Explore a nearby dark cave
+3. Walk past a patch of glowing mushrooms

@@ -1,0 +1,5 @@
+The jungle thickens and you encounter a wide river blocking your path. Logs lie across it, and a tall tree stands nearby giving a view of the surroundings.
+
+1. Attempt to cross the river using the logs
+2. Climb the tall tree to scout a safer path
+
