@@ -1,14 +1,15 @@
 import os
 import random
+import webbrowser
 
-# Always run in the folder where story.py
+# Always run in the folder where gamecode.py
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 HP = 100
 inventory = []
 dead = False
 
-# --- Flags for tracking key decisions ---
+# Flags for tracking key decisions 
 followed_monkeys = False
 explored_cave = False
 checked_mushroom = False
@@ -41,28 +42,80 @@ def change_hp(amount):
         lose_game("HP dropped to zero.")
 
 def show_ending(filename=None, story_text=None):
+    # Decide story content
     if story_text:
         story = story_text
     else:
         story = read_story(filename)
+    
+    # Print story in console
     print_slow(story)
-    with open("story_output.html", "w") as f:
-        f.write(f"<html><head><link rel='stylesheet' href='style.css'></head><body><div class='story'>{story}</div></body></html>")
-    print("\n✅ Story exported to story_output.html")
 
-# --- Helper to show status ---
+    #replace new lines, because didnt work
+
+    story_html = story.replace("\n", "<br>")
+
+    # Prepare inventory as a bullet list
+    inv_html = ""
+    if inventory:
+        inv_html += "<ul>"
+        for item in inventory:
+            inv_html += f"<li>{item}</li>"
+        inv_html += "</ul>"
+        story_html += f"<br><strong>Inventory:</strong>{inv_html}"
+
+    # Prepare HTML structure
+    html_file = "mr_eggmaster_journey.html"
+    with open(html_file, "w", encoding="utf-8") as f:
+        f.write(f"""
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Mr. Eggmaster Adventure Summary</title>
+            <link rel='stylesheet' href='style.css'>
+        </head>
+        <body>
+            <div class='container'>
+                <header>
+                    <h1>Mr. Eggmaster Adventure Summary</h1>
+                    <p class='subtitle'>Your journey through the Amazon jungle</p>
+                </header>
+                <section class='story-path'>
+                    {story_html}
+                </section>
+                <section class='stats'>
+                    <h3>Final HP: {HP}</h3>
+                </section>
+                <footer>
+                    <p>Created by Paresh Singh Kandel</p>
+                </footer>
+            </div>
+        </body>
+        </html>
+        """)
+
+    print(f"\n✅ Story exported to {html_file}")
+    # Automatically open HTML in default browser
+    webbrowser.open(f"file://{os.path.abspath(html_file)}")
+# show status
 def show_status():
     print(f"\nCurrent HP: {HP}")
     print(f"Inventory: {inventory}")
 
-# --- Lose function ---
+#  Lose Game function
 def lose_game(reason):
     global HP, inventory
     lose_text = f"💀 Alas, Mr. Eggmaster! {reason}\nHP: {HP}\nInventory: {inventory}\n"
     show_ending(story_text=lose_text)
     exit()
 
-# --- Start of Jungle Adventure ---
+
+# Start of Jungle Adventure
+# Game Introduction
+print_slow(read_story("intro.txt"))
+input("Press Enter to begin your adventure...")
+
 print_slow(read_story("jungle_1.txt"))
 choice1 = input("Choose (1/2/3): ").strip()
 
@@ -88,7 +141,7 @@ else:
 
 show_status()
 
-# --- Decision 2 ---
+# Decision 2
 print_slow(read_story("jungle_2.txt"))
 choice2 = input("Choose (1/2): ").strip()
 
@@ -104,7 +157,7 @@ else:
 
 show_status()
 
-# --- Decision 3 ---
+# Decision 3
 print_slow(read_story("jungle_3.txt"))
 choice3 = input("Choose (1/2/3): ").strip()
 
@@ -123,7 +176,7 @@ elif choice3 == "3":
         inventory.append("Compass Fragment")
 else:
     lose_game("You got distracted and fell into a trap!")
-# --- Decision 4 ---
+# Decision 4
 print_slow(read_story("jungle_4.txt"))
 choice4 = input("Choose (1/2/3): ").strip()
 
@@ -144,7 +197,7 @@ else:
 
 show_status()
 
-# --- Decision 5 ---
+# Decision 5
 print_slow(read_story("jungle_5.txt"))
 choice5 = input("Choose (1/2): ").strip()
 
@@ -160,7 +213,7 @@ else:
 
 show_status()
 
-# --- Decision 6 ---
+# Decision 6
 print_slow(read_story("jungle_6.txt"))
 choice6 = input("Choose (1/2/3): ").strip()
 
@@ -181,7 +234,7 @@ else:
 
 show_status()
 
-# --- Decision 7 ---
+# Decision 7
 print_slow(read_story("jungle_7.txt"))
 choice7 = input("Choose (1/2): ").strip()
 
